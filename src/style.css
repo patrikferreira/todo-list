@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300&display=swap');
+
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Marhey', cursive;
+}
+
+body {
+    background: #cfcfc4;
+    /* centralize container */
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    padding: 20px;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+#container #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+#container #header h1 {
+    font-size: 45px;
+}
+
+#container #header #date {
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container #header #date::before {
+    content: '';
+    height: 2px;
+    width: 80px;
+    background: black;
+    position: absolute;
+    left: 0;
+}
+
+#container #header #date::after {
+    content: '';
+    height: 2px;
+    width: 80px;
+    background: black;
+    position: absolute;
+    right: 0;
+}
+
+#todoDiv {
+    width: 100%;
+}
+
+#todoDiv #taskHeader {
+    display: flex;
+    height: 35px;
+    border: 2px solid rgb(229, 229, 229);
+    overflow: hidden;
+}
+
+#todoDiv #taskField {
+    width: 280px;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    background: transparent;
+}
+
+#todoDiv #taskField::placeholder {
+    font-size: 16px;
+}
+
+#todoDiv #addTask {
+    font-size: 15px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    background: rgba(255, 255, 255, 0.23);
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+#list .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(229, 229, 229);
+    width: 100%;
+    padding: 0 0 0 20px;
+    height: 35px;
+}
+
+#list .task .trash {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.23);
+    height: 100%;
+}
+
+#foot {
+    font-size: 13px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+
+
+
+
