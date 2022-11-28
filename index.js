@@ -43,7 +43,7 @@ addTask.addEventListener('click', () => {
         refreshHtmlState();
     }
     else {
-        msgError.innerText = 'Máximo de tarefas atingido!';
+        msgError.innerText = 'Máximo de tarefas atingidas!';
     }
 });
 // function remove task
