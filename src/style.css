@@ -6,6 +6,7 @@
     --color-border: rgb(183, 183, 183);
     --bg-button: #D3D1CB;
     --color-msg: rgba(255, 0, 0, 0.741);
+    --shadow: rgba(0, 0, 0, 0.493);
 }
 
 * { 
@@ -36,7 +37,7 @@ body {
     padding: 20px;
     gap: 10px;
     border-radius: 5px;
-    box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.493);
+    box-shadow: 10px 10px 5px -6px var(--shadow);
     border: 1px solid var(--color-border);
 }
 
