@@ -9,28 +9,29 @@
     <script src="https://kit.fontawesome.com/5621bbdc8a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- container -->
     <div id="container">
         <div id="header">
            <h1>TodoList</h1>
-           <p id="date"></p>
         </div>
 
         <div id="todoDiv">
             <div id="taskHeader">
-                <input type="text" id="taskField" placeholder="Nova tarefa">
+                <input type="text" id="taskField" placeholder="Nova tarefa" maxlength="23">
                 <button id="addTask"><i class="fa-regular fa-plus"></i></button>
             </div>
         </div>
         
-        <ul id="list">
+        <ul id="taskList">
             
         </ul>
-
-        <footer id="foot">
-            <span class="infoFoot"></span>
-        </footer>
     </div>
 
-    <script src="./src/script.js"></script>
+    <!-- footer -->
+    <footer id="msgError">
+        <span id="msg"></span>
+    </footer>
+
+    <script src="index.js" type="module"></script>
 </body>
 </html>

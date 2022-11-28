@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Marhey:wght@300&display=swap');
 
-/* reset css */
-* {
+:root {
+    --bg-body: #D3D1CB;
+    --bg-container: #ebebeb;
+    --color-border: rgb(183, 183, 183);
+    --bg-button: #D3D1CB;
+    --color-msg: rgba(255, 0, 0, 0.741);
+}
+
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,76 +17,49 @@
 }
 
 body {
-    background: #cfcfc4;
-    /* centralize container */
+    background: var(--bg-body);
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
 }
 
 #container {
+    background-color: var(--bg-container);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 350px;
+    width: 354px;
+    height: 485px;
     padding: 20px;
-    margin-top: 30px;
-    gap: 20px;
-}
-
-#container #header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 30px;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.493);
+    border: 1px solid var(--color-border);
 }
 
 #container #header h1 {
     font-size: 45px;
 }
 
-#container #header #date {
-    font-size: 17px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#container #header #date::before {
-    content: '';
-    height: 2px;
-    width: 80px;
-    background: black;
-    position: absolute;
-    left: 0;
-}
-
-#container #header #date::after {
-    content: '';
-    height: 2px;
-    width: 80px;
-    background: black;
-    position: absolute;
-    right: 0;
-}
-
 #todoDiv {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #todoDiv #taskHeader {
     display: flex;
     height: 35px;
-    border: 2px solid rgb(229, 229, 229);
+    width: 228px;
+    border: 2px solid var(--color-border);
     overflow: hidden;
 }
 
 #todoDiv #taskField {
-    width: 280px;
+    width: 190px;
     border: none;
     outline: none;
     padding: 0 20px;
@@ -91,52 +71,69 @@ body {
 }
 
 #todoDiv #addTask {
+    background-color: var(--bg-button);
     font-size: 15px;
     width: 40px;
     border: none;
     cursor: pointer;
-    transition: .3s;
-    background: rgba(255, 255, 255, 0.23);
 }
 
-#list {
+#todoDiv #addTask:active {
+    font-size: 10px;
+}
+
+#taskList {
     display: flex;
     flex-direction: column;
     gap: 5px;
     width: 100%;
 }
 
-#list .task {
+#taskList .task {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    border: 2px solid rgb(229, 229, 229);
+    border: 2px solid var(--color-border);
     width: 100%;
-    padding: 0 0 0 20px;
-    height: 35px;
+    min-height: 35px;
+    gap: 2px;
+    position: relative;
 }
 
-#list .task .trash {
+#taskList .task .taskLi {
+    position: absolute;
+    left: 20px;
+}
+
+#taskList .task .check, .trash {
+    background-color: var(--bg-button);
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.23);
     height: 100%;
+    border: none;
 }
 
-#foot {
+.checkLi {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+#taskList .task .check:active {
+    font-size: 10px;
+}
+
+#msgError {
+    margin-top: 8px;
+    bottom: 15px;  
+}
+
+#msgError #msg {
     font-size: 13px;
     font-weight: 100;
-    position: absolute;
-    bottom: 0;
     padding: 10px;
-    color: red;
+    color: var(--color-msg);
     font-family: Arial, Helvetica, sans-serif; 
 }
-
-
-
-
-
