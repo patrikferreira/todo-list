@@ -138,4 +138,20 @@ body {
     color: var(--color-error);
 }
 
+/* responsive */
+@media (max-width: 600px) {
+    #taskDiv #taskHeader {
+        width: 350px;
+    }
+
+    #taskField {
+        width: 300px;
+    }
+
+    #taskList {
+        width: 350px;
+    }
+    
+}
+
 
