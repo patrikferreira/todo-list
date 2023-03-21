@@ -1,1 +1,1 @@
-https://patrikferreira.github.io/to-do-list/
+https://patrikferreira.github.io/todo-list/
