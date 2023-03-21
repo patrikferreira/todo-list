@@ -1,18 +1,14 @@
-"use strict";
-// variables
+import Task from "./classes/Task.js";
 const taskField = document.getElementById('taskField');
 const addTask = document.getElementById('addTask');
 const taskList = document.getElementById('taskList');
 const msgError = document.getElementById('msg');
-// id
-let id = 0;
-// array
 let taskArr = [];
-// add task event click
+let id = 0;
 addTask.addEventListener('click', () => {
     if (taskField.value == '')
         return;
-    if (taskArr.length < 8) {
+    if (taskArr.length < 10) {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
         const taskLi = document.createElement('li');
@@ -28,25 +24,25 @@ addTask.addEventListener('click', () => {
         taskDiv.appendChild(taskLi);
         taskDiv.appendChild(taskCheck);
         taskDiv.appendChild(taskRemove);
-        // variable task
-        const task = { html: taskDiv, id: ++id, btnCheck: taskCheck, btnRemove: taskRemove, isChecked: false };
+        const task = new Task(taskField.value, taskDiv, ++id, taskCheck, taskRemove, false);
         taskArr.push(task);
-        // check task event click
+        // check task
         taskCheck.addEventListener('click', () => {
             task.isChecked = !task.isChecked;
             refreshHtmlState();
         });
-        // remove task event click
+        // remove task
         taskRemove.addEventListener('click', () => {
             removeTask(task);
         });
+        // refresh html
         refreshHtmlState();
     }
     else {
         msgError.innerText = 'Máximo de tarefas atingidas!';
     }
 });
-// function remove task
+// function removeTask
 function removeTask(taskRemove) {
     taskArr = taskArr.filter(task => {
         return task.id !== taskRemove.id;
@@ -61,5 +57,6 @@ function refreshHtmlState() {
     taskArr.forEach(task => {
         taskList.appendChild(task.html);
         task.isChecked ? task.html.children[0].classList.add('checkLi') : task.html.children[0].classList.remove('checkLi');
+        task.isChecked ? task.html.children[1].classList.add('checkBtn') : task.html.children[1].classList.remove('checkBtn');
     });
 }
